@@ -24,11 +24,19 @@
                 
                   <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" name="name" placeholder="Name">
+                    <input type="text" class="form-control" name="name" placeholder="Name" required>
+                    @if($errors->has('name'))
+                    <span class="text-danger">{{$errors->first('name')}}</span>
+                    @endif
                   </div>
+
+
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="Email">
+                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                    @if($errors->has('email'))
+                    <span class="text-danger">{{$errors->first('email')}}</span>
+                    @endif
                   </div>
   
                     </div>

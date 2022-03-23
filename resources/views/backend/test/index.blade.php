@@ -26,7 +26,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Created Date</th>
-                    <th>Last Update</th>
+                    <th>Action</th>
                     
                   </tr>
                   </thead>
@@ -40,6 +40,10 @@
                     <td>{{ $row->name }}</td>
                     <td>{{ $row->email }} </td>
                     <td>{{ $row->created_at}}</td>
+                    <td style="display:flex" >
+                      <a href="{{route('test.show',['id'=> $row->id]) }}" class="btn-success m-1">Show</a>
+                      <a href="#" class="btn-info m-1">Edit</a>
+                    </td>
                     
                 
                   </tr>

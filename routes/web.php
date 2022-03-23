@@ -28,3 +28,5 @@ Route::get('/test', [App\Http\Controllers\TestController::class, 'index'])->name
 Route::get('/test/create', [App\Http\Controllers\TestController::class, 'create'])->name('test.create');
 
 Route::post('/test', [App\Http\Controllers\TestController::class, 'store'])->name('test');
+
+Route::get('/test/{id}', [App\Http\Controllers\TestController::class, 'show'])->name('test.show');
