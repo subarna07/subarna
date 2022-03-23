@@ -30,3 +30,7 @@ Route::get('/test/create', [App\Http\Controllers\TestController::class, 'create'
 Route::post('/test', [App\Http\Controllers\TestController::class, 'store'])->name('test');
 
 Route::get('/test/{id}', [App\Http\Controllers\TestController::class, 'show'])->name('test.show');
+
+Route::get('/test/{id}/edit' , [App\Http\Controllers\TestController::class, 'edit'])->name('test.edit');
+
+Route::put('/test/{id}/update' , [App\Http\Controllers\TestController::class, 'update'])->name('test.update');

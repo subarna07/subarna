@@ -14,17 +14,18 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Insert Data</h3>
+                <h3 class="card-title">Update Data</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action = "{{route('test') }}" method="POST">
+              <form action = "{{route('test.update',['id'=>$data['row']->id]) }}" method="POST">
+                @method('put')
                 @csrf
                 <div class="card-body">
 
                   <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" name="name" placeholder="Name">
+                    <input type="text" value="{{ $data['row']->name }}" class="form-control" name="name" placeholder="Name">
                     @if($errors->has('name'))
                     <span class="text-danger">{{$errors->first('name')}}</span>
                     @endif
@@ -33,7 +34,7 @@
 
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                    <input type="email" value="{{ $data['row']->email}}" class="form-control" name="email" placeholder="Email" required>
                     @if($errors->has('email'))
                     <span class="text-danger">{{$errors->first('email')}}</span>
                     @endif
@@ -47,7 +48,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Update</button>
                 </div>
               </form>
             </div>

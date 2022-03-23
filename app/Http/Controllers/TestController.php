@@ -31,7 +31,30 @@ class TestController extends Controller
     }
 
     public function show($id){
-        dd();
-        return view('backend.test.show');
+        $data = [];
+        $data['row'] = Test::find($id);
+
+        return view('backend.test.show',compact('data'));
+    }
+    public function edit($id){
+        $data = [];
+        $data['row'] = Test::find($id);
+
+        return view('backend.test.edit',compact('data'));
+    }
+
+    public function update(Request $request,$id){
+        $request ->validate([
+            'name'=>'required',
+            'email'=>'required'
+        ]);
+
+        $data['row'] = Test::find($id);
+
+        $data['row']->update($request->all());
+
+        session()->flash('success_message','Data Updated Successfully');
+
+        return redirect()->route('test.index');
     }
 }
