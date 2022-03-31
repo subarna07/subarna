@@ -1,4 +1,4 @@
-@extends('backend.layouts.app')
+@extends('backend.layouts.app',['panel'=>'Dashboard','page'=>'home'])
 
 @section('title','Home')
 
