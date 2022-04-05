@@ -45,18 +45,18 @@
                     <td>{{$row->created_at->diffForHumans()}}</td>
                    
                     <td style="display:flex">
-                          <a class="btn btn-primary btn-sm mr-2" href="{{ route('category.show',['id' => $row->id])}}">
+                          <a class="btn btn-primary btn-sm mr-2" href="{{ route('category.show',['slug' => $row->slug])}}">
                               <i class="fas fa-folder">
                               </i>
                               View
                           </a>
-                          <a class="btn btn-info btn-sm mr-2" href="{{ route('category.edit',['id' => $row->id])}}">
+                          <a class="btn btn-info btn-sm mr-2" href="{{ route('category.edit',['slug' => $row->slug])}}">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
 
-                          <form action="{{ route('category.delete',['id' => $row->id])}}" method="POST">
+                          <form action="{{ route('category.delete',['slug' => $row->slug])}}" method="post">
                             @method('delete')
                             @csrf
 

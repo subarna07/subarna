@@ -31,10 +31,12 @@ Route::delete('/test/{id}/delete' , [App\Http\Controllers\TestController::class,
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 /* route for categories*/
+Route::middleware(['web','auth'])->group(function(){
 Route::get('/category', [App\Http\Controllers\CategoryController::class, 'index'])->name('category.index');
 Route::get('/category/create', [App\Http\Controllers\CategoryController::class, 'create'])->name('category.create');
 Route::post('/category/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('category.store');
-Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 'show'])->name('category.show');
-Route::get('/category/{id}/edit' , [App\Http\Controllers\CategoryController::class, 'edit'])->name('category.edit');
-Route::put('/category/{id}/update' , [App\Http\Controllers\CategoryController::class, 'update'])->name('category.update');
-Route::delete('/category/{id}/delete' , [App\Http\Controllers\CategoryController::class, 'delete'])->name('category.delete');
+Route::get('/category/{slug}', [App\Http\Controllers\CategoryController::class, 'show'])->name('category.show');
+Route::get('/category/{slug}/edit' , [App\Http\Controllers\CategoryController::class, 'edit'])->name('category.edit');
+Route::put('/category/{slug}/update' , [App\Http\Controllers\CategoryController::class, 'update'])->name('category.update');
+Route::delete('/category/{slug}/delete' , [App\Http\Controllers\CategoryController::class, 'delete'])->name('category.delete');
+});

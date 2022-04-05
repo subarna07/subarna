@@ -8,18 +8,50 @@
 
             <table class="table tabble-striped">
                 <tr>
-                    <th>Id</th>
                     <th>Name</th>
-                    <th>Email</th>
-                    <th>created_at</th>
-                    <th>updated_at</th>
+                    <td>{{$data['row']->name}}
                 </tr>
                 <tr>
-                    <td>{{$data['row']->id}}
-                    <td>{{$data['row']->name}}
-                    <td>{{$data['row']->email}}
-                    <td>{{$data['row']->created_at}}
-                    <td>{{$data['row']->updated_at}}
+                    <th>Slug</th>
+                    <td>{{$data['row']->slug}}
+                </tr>
+                <tr>
+                    <th>Rank</th>
+                    <td>{{$data['row']->rank}}
+                </tr>
+                <tr
+                    <th>Short_description</th>
+                    <td>{{$data['row']->short_description}}
+               </tr>
+               <tr>
+                    <th>Description</th>
+                    <td>{{$data['row']->description}}
+              </tr>
+              <tr>
+                    <th>meta_title</th>
+                    <td>{{$data['row']->meta_title}}
+              </tr>
+              <tr>
+                    <th>meta_description</th>
+                    <td>{{$data['row']->meta_description}}
+              </tr> 
+              <tr>
+                      <th>image</th>
+                    <td><img src="{{asset('images/category/' .$data['row']->image)}}" class="image-fluid" height="160px" width="160px"></td>
+              </tr>
+
+                    
+                </tr>
+                <tr>
+                   
+                   
+                    
+                    
+                    
+                    
+                     
+                     
+                
                 </tr>
             </table>
             

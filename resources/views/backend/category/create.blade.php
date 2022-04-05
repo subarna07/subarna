@@ -23,7 +23,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-            {{Form:: open(['route'=>'category.store','method'=> 'put'])}}
+            {{Form:: open(['route'=>'category.store','method'=> 'post','files'=>true])}}
             @include('backend.category.includes.main_form')
             {{Form::close()}}
             
